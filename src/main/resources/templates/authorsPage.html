@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>authors</title>
+</head>
+<body>
+
+<ul th:each="author: ${authors}">
+    <li th:text="${author}"></li> <a th:href="@{/deleteAuthor(id=${author.id})}" style="color: red">x</a> <a th:href="@{/authorById(id=${author.id})}">change</a>
+</ul>
+</body>
+</html>
