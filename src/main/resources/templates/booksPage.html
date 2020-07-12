@@ -3,9 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <title>books</title>
+    <link href="/style.css" rel="stylesheet" >
+
 </head>
 <body>
-
+<h2>books</h2>
 <ul th:each="book: ${books}">
     <li th:text="${book}"></li>
     <a th:href="@{/deleteBook(id=${book.id})}" style="color: red">x</a>

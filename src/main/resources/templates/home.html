@@ -3,9 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <title>Home</title>
+    <link href="/style.css" rel="stylesheet" >
 </head>
 <body>
-
+<h2>Add author</h2>
 <form action="/addAuthor" method="post">
     <input type="text" name="name" placeholder="name"><br>
     <input type="text" name="surname" placeholder="surname"><br>
@@ -16,19 +17,19 @@
     <textarea name="bio" placeholder="bio" ></textarea>
 
     <input type="submit" value="add">
-</form><br>
-<a href="/authorsPage">authors</a><br>
+</form>  <a href="/authorsPage">authors</a><br>
 
+<h2>Add book</h2>
 <form action="/addBook"  method="post">
     <input type="text" name="title" placeholder="title"><br>
     <textarea name="description" placeholder="description"></textarea><br>
     <input type="text" name="price" placeholder="price"><br>
 <!--    <input type="text" name="authorId" placeholder="id"><br>-->
     <select   name="authorId">
-        <option th:each="author:${authors}" th:value="${author.id}" th:text="${author.name}"></option>
+        <option th:each="author:${aut}" th:value="${author.id}" th:text="${author.name}"></option>
     </select><br>
     <input type="submit" value="add">
-</form><br>
-<a href="/books">books</a>
+</form> <a href="/books">books</a>
+
 </body>
 </html>

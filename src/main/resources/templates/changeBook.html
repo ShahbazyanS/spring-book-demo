@@ -3,6 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <link href="/style.css" rel="stylesheet" >
+
 </head>
 <body>
 <div   th:text="${book}" ></div>
@@ -15,7 +17,7 @@
     <select   name="authorId">
         <option th:each="author:${authors}" th:value="${author.id}" th:text="${author.name}"></option>
     </select><br>
-    <input type="submit" value="add">
+    <input type="submit" value="change">
 </form><br>
 </body>
 </html>

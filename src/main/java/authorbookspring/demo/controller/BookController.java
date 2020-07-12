@@ -22,7 +22,7 @@ public class BookController {
     private BookRepository bookRepository;
 
     @PostMapping("/addBook")
-    public String addAuthor(@ModelAttribute Book book) {
+    public String addBook(@ModelAttribute Book book) {
         bookRepository.save(book);
         return "redirect:/";
     }
@@ -54,7 +54,7 @@ public class BookController {
     @GetMapping("/allAuthors")
     public String alAuthors(ModelMap map){
         List<Author> authors = authorRepository.findAll();
-        map.addAttribute("authors", authors);
+        map.addAttribute("aut", authors);
         return "home";
     }
     @PostMapping("/changeB")
