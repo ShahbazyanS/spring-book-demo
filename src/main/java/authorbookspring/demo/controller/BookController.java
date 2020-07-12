@@ -1,6 +1,8 @@
 package authorbookspring.demo.controller;
 
+import authorbookspring.demo.model.Author;
 import authorbookspring.demo.model.Book;
+import authorbookspring.demo.repository.AuthorRepository;
 import authorbookspring.demo.repository.BookRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -14,7 +16,8 @@ import java.util.List;
 
 @Controller
 public class BookController {
-
+    @Autowired
+    private AuthorRepository authorRepository;
     @Autowired
     private BookRepository bookRepository;
 
@@ -35,11 +38,24 @@ public class BookController {
         bookRepository.deleteById(id);
         return "redirect:/books";
     }
-    @GetMapping("/BookById")
+    @GetMapping("/bookById")
     public String bookByIde(@RequestParam("id") int id, ModelMap map){
         Book book = bookRepository.getOne(id);
         map.addAttribute("book", book);
         return "changeBook";
+
+    }
+    @GetMapping("/author")
+    public String alllAuthors(ModelMap map){
+        List<Author> authors = authorRepository.findAll();
+        map.addAttribute("authors", authors);
+        return "changeBook";
+    }
+    @GetMapping("/allAuthors")
+    public String alAuthors(ModelMap map){
+        List<Author> authors = authorRepository.findAll();
+        map.addAttribute("authors", authors);
+        return "home";
     }
     @PostMapping("/changeB")
     public String changeAuthor(@ModelAttribute Book book){

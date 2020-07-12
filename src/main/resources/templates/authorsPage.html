@@ -7,7 +7,9 @@
 <body>
 
 <ul th:each="author: ${authors}">
-    <li th:text="${author}"></li> <a th:href="@{/deleteAuthor(id=${author.id})}" style="color: red">x</a> <a th:href="@{/authorById(id=${author.id})}">change</a>
+    <li th:text="${author}"></li>
+    <a th:href="@{/deleteAuthor(id=${author.id})}" style="color: red">x</a>
+    <a th:href="@{/authorById(id=${author.id})}">change</a>
 </ul>
 </body>
 </html>

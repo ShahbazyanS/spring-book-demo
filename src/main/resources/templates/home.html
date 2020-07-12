@@ -12,14 +12,16 @@
     <input type="text" name="email" placeholder="email"><br>
     <input type="radio" name="gender" value="MALE"> male
     <input type="radio" name="gender" value="FEMALE"> female<br>
-    <input type="text" name="bio" placeholder="bio"><br>
+<!--    <input type="text" name="bio" placeholder="bio"><br>-->
+    <textarea name="bio" placeholder="bio" ></textarea>
+
     <input type="submit" value="add">
 </form><br>
 <a href="/authorsPage">authors</a><br>
 
 <form action="/addBook"  method="post">
     <input type="text" name="title" placeholder="title"><br>
-    <input type="text" name="description" placeholder="description"><br>
+    <textarea name="description" placeholder="description"></textarea><br>
     <input type="text" name="price" placeholder="price"><br>
 <!--    <input type="text" name="authorId" placeholder="id"><br>-->
     <select   name="authorId">

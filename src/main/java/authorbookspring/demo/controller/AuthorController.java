@@ -35,24 +35,11 @@ public class AuthorController {
         return "authorsPage";
     }
 
-    @GetMapping("/allAuthors")
-    public String alAuthors(ModelMap map){
-        List<Author> authors = authorRepository.findAll();
-        map.addAttribute("authors", authors);
-        return "home";
-    }
-    @GetMapping("/author")
-    public String alllAuthors(ModelMap map){
-        List<Author> authors = authorRepository.findAll();
-        map.addAttribute("authors", authors);
-        return "changeBook";
-    }
-
 
     @GetMapping("/deleteAuthor")
     public String deleteAuthor(@RequestParam("id") int id){
         authorRepository.deleteById(id);
-        return "redirect:/authorsPage";
+        return "redirect:/";
     }
     @GetMapping("/authorById")
     public String authorByIde(@RequestParam("id") int id, ModelMap map){
